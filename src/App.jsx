@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage.page";
 import Login from "./pages/Login/Login.page"
 import SignUp from "./pages/SignUp/SignUp.page"
 import GlobalHeaderRight from "./components/GlobalHeaderRight/GlobalHeaderRight.component"
+import axios from "axios";
 
 const defaultFooterDom = (
     <DefaultFooter
@@ -34,6 +35,9 @@ const defaultFooterDom = (
 );
 
 function App() {
+    if(sessionStorage.getItem('token'))
+        axios.defaults.headers.common['Authorization'] = `Bearer ${sessionStorage.getItem('token')}`;
+
     return (
 
         <ProLayout
