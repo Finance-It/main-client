@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.less';
 import ProLayout, {DefaultFooter} from '@ant-design/pro-layout';
 import {GithubOutlined} from '@ant-design/icons';
