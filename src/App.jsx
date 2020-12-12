@@ -1,10 +1,10 @@
 import './App.less';
 import ProLayout, {DefaultFooter} from '@ant-design/pro-layout';
 import {GithubOutlined} from '@ant-design/icons';
-
+import HomePage from "./pages/HomePage/HomePage.page";
 const defaultFooterDom = (
     <DefaultFooter
-        copyright={`${new Date().getFullYear()} PICT ACM Student Chapter`}
+        copyright={`${new Date().getFullYear()} Finance It`}
         links={[
           {
             key: 'Website',
@@ -38,7 +38,7 @@ function App() {
           footerRender={() => defaultFooterDom}
 
       >
-          <h1>sflsdkfldj</h1>
+       <HomePage/>
       </ProLayout>
   );
 }
