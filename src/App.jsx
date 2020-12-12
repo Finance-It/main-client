@@ -1,7 +1,10 @@
 import './App.less';
 import ProLayout, {DefaultFooter} from '@ant-design/pro-layout';
+import {Route, Switch} from 'react-router-dom';
 import {GithubOutlined} from '@ant-design/icons';
 import HomePage from "./pages/HomePage/HomePage.page";
+import Login from "./pages/Login/Login.page"
+
 const defaultFooterDom = (
     <DefaultFooter
         copyright={`${new Date().getFullYear()} Finance It`}
@@ -30,6 +33,7 @@ const defaultFooterDom = (
 
 function App() {
   return (
+
       <ProLayout
           title="Finance It"
           logo="https://pict.acm.org/radiance/img/PASC-W2.png"
@@ -38,7 +42,10 @@ function App() {
           footerRender={() => defaultFooterDom}
 
       >
-          <HomePage className='App'/>
+          <Switch>
+              <Route exact path="/" component={HomePage}/>
+              <Route exact path="/login" component={Login}/>
+          </Switch>
       </ProLayout>
   );
 }
