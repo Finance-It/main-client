@@ -7,6 +7,7 @@ export default function FundComponent(props){
     const [view, setView] = React.useState(0)
     const [amount, setAmount] = React.useState(0)
     const [isAmountValid, setAmountValid] = React.useState(true)
+    const [paymentLink, setPaymentLink] = React.useState(null)
 
     function handleAmountChange(e){
         const amt = e.target.value
@@ -22,13 +23,17 @@ export default function FundComponent(props){
             campaign: props.campaignId,
             amount
         }
-        const res = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/investments/invest`, data)
-        console.log(res.data)
-        const investmentId = res.data.id
-        setView(3)
-        const res1 = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/payments/investments/${investmentId}`, {})
-        console.log(res1.data)
-
+        try {
+            const res = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/investments/invest`, data)
+            const investmentId = res.data.id
+            setView(3)
+            const res1 = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/payments/investments/${investmentId}`, {})
+            console.log(res1.data)
+            setPaymentLink(res1.data.link)
+            setView(4)
+        } catch(e){
+            alert('Some error occurred')
+        }
     }
 
     return <div style={{width: '100%', maxWidth: '15rem', marginTop: '1.5rem'}}>
@@ -58,6 +63,9 @@ export default function FundComponent(props){
         </div>}
         {view === 3 && <div>
             <Alert message={<><LoadingOutlined />&nbsp; Generating Payment Link</>} />
+        </div>}
+        {view === 4 && <div>
+            <Button href={paymentLink} type={'primary'} color={'success'}>Proceed to Pay</Button>
         </div>}
     </div>
 }
