@@ -25,6 +25,7 @@ function MyInvestmentsPage(props) {
                 if (res.status === 200) {
                     console.log(res.data)
                     setInvestments(res.data);
+                    console.log(res.data)
                     setLoading(true)
                 }
                 setLoading(false);
@@ -48,7 +49,8 @@ function MyInvestmentsPage(props) {
                             {investments.map((investment) => (
                                 <Col key={investment.id} sm={24} md={8} lg={6}>
                                     <MyInvestmentCard campaign={investment.campaign} status={investment.status}
-                                                      amount={investment.amount}
+                                                      amount={investment.amount} type={investment.campaign.type}
+                                                      paymentLink={investment.razorpay_payment_link}
                                     />
                                 </Col>
                             ))}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Tag, Typography} from "antd";
+import {Button, Card, Tag, Typography} from "antd";
 import {days_difference} from "../../utils/utils";
 
 function MyInvestmentCard(props) {
@@ -27,14 +27,14 @@ function MyInvestmentCard(props) {
         <div>
             <Card
                 style={{width: 300}}
-                hoverable
+
+                actions={props.status === 'INITIATED' && [<Button href={props.paymentLink}>Pay Now</Button>]}
             >
                 <Card.Meta
                     title={<Typography.Title
-                        style={{width: '50%', marginLeft: 'auto', marginRight: 'auto', fontWeight: '400'}}
+                        style={{marginRight: 'auto', fontWeight: '400'}}
                         level={4}>{props.campaign.name}<br/>
-                        <Tag style={{marginLeft: '20%', marginRight: '20%'}}
-                             color={typeTagColorCampaign[props.campaign.type]}>{props.type}</Tag>
+                        <Tag color={typeTagColorCampaign[props.campaign.type]}>{props.type}</Tag>
                     </Typography.Title>}
                 />
                 <br/><br/>

@@ -9,6 +9,7 @@ import GlobalHeaderRight from "./components/GlobalHeaderRight/GlobalHeaderRight.
 import axios from "axios";
 
 import CampaignPage from "./pages/CampaignPage/campaign.page";
+import MyInvestmentsPage from "./pages/InvestmentsPage/myInvestments.page";
 const defaultFooterDom = (
     <DefaultFooter
         copyright={`${new Date().getFullYear()} Finance It`}
@@ -56,6 +57,7 @@ function App() {
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/signup" component={SignUp}/>
                 <Route path="/campaign/:id" component={CampaignPage}/>
+                <Route exact path="/investments" component={MyInvestmentsPage}/>
             </Switch>
         </ProLayout>
     );

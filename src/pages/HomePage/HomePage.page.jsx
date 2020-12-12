@@ -4,7 +4,6 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import CardComponent from "../../components/HomePage/card.component";
 import ProSkeleton from '@ant-design/pro-skeleton';
-import TopComponent from "../../components/CampaignPage/top.component";
 
 const contentStyle = {
     height: '400px',
@@ -13,17 +12,6 @@ const contentStyle = {
     textAlign: 'center',
     background: '#364d79',
 };
-
-const campaign = {
-    id: 1,
-    type: 'Donation',
-    name: 'PICT IoT Lab Fundraiser',
-    business_name: 'Pune Inst of Computer Tech',
-    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a',
-    total_amount: 7676,
-    target_amount: 97675
-}
-
 
 const HomePage = (props) => {
     useEffect(() => {
@@ -85,7 +73,6 @@ const HomePage = (props) => {
                     ))}
                 </Row>
             )}
-            <TopComponent {...campaign} />
         </div>
     )
 }

@@ -3,6 +3,7 @@ import {Col, Row} from "antd";
 import TabComponent from "../../components/CampaignPage/tab.component";
 import axios from "axios";
 import ProSkeleton from '@ant-design/pro-skeleton';
+import TopComponent from "../../components/CampaignPage/top.component";
 
 function CampaignPage(props) {
 
@@ -35,7 +36,7 @@ function CampaignPage(props) {
                 loading ? (
                     <ProSkeleton/>) : (
                     <div>
-
+                        <TopComponent {...campaign} />
                         <br/>
                         <br/>
                         <br/>
