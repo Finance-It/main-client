@@ -16,8 +16,8 @@ const Login = (props) => {
             const res = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/auth/jwt/create/`, values)
             setStatus('success')
             setErrors('')
-            const token = res.data.access
-            sessionStorage.setItem('token', token)
+            console.log(res.data.access)
+            sessionStorage.setItem('token', res.data.access)
             props.history.push('/')
         } catch (e) {
             setStatus('error')

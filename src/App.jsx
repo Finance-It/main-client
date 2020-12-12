@@ -5,6 +5,7 @@ import {GithubOutlined} from '@ant-design/icons';
 import HomePage from "./pages/HomePage/HomePage.page";
 import Login from "./pages/Login/Login.page"
 import SignUp from "./pages/SignUp/SignUp.page"
+import GlobalHeaderRight from "./components/GlobalHeaderRight/GlobalHeaderRight.component"
 
 const defaultFooterDom = (
     <DefaultFooter
@@ -41,6 +42,8 @@ function App() {
             layout="top"
             fixedHeader="true"
             footerRender={() => defaultFooterDom}
+            rightContentRender={() => <GlobalHeaderRight/>}
+
 
         >
             <Switch>

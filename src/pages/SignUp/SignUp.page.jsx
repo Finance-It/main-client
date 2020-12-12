@@ -29,7 +29,6 @@ const SignUp = (props) => {
             setStatus('success')
             setErrors('')
             const token = res.data.access
-            sessionStorage.setItem('token', token)
             props.history.replace('/login')
             notification['success']({
                 message: 'User Registered',
