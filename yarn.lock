@@ -57,6 +57,11 @@
   dependencies:
     rc-util "^5.0.1"
 
+"@ant-design/pro-skeleton@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@ant-design/pro-skeleton/-/pro-skeleton-1.0.0-beta.2.tgz#ef5d22fafc95c559b90e71978343eae7e786902c"
+  integrity sha512-OOJmf8v3MvQfxlvPCYoblAfjRHyKs72vJay6Sf4o9EPsSImVICpm9pXm+dyhrZAWHci2VlE6/mWY8oG9Mjpppg==
+
 "@ant-design/pro-utils@1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@ant-design/pro-utils/-/pro-utils-1.4.0.tgz#ca2b338542fd7c075bafdfe273e5f052f2006dda"

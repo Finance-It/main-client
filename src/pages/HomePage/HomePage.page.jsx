@@ -1,8 +1,9 @@
-import {Carousel, Col, Row, Skeleton} from 'antd';
+import {Carousel, Col, Row} from 'antd';
 import CaroselBanner from "../../components/HomePage/CaroselBanner.component";
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import CardComponent from "../../components/HomePage/card.component";
+import ProSkeleton from '@ant-design/pro-skeleton';
 
 const contentStyle = {
     height: '400px',
@@ -59,7 +60,7 @@ const HomePage = () => {
     <br/>    <br/>
 
             {loading ? (
-                <Skeleton active/>) : (
+                <ProSkeleton />) : (
                 <Row gutter={[0, 32]} justify="center" style={{justifyContent: "center", marginLeft: "8%"}}>
                     {campaigns.map((campaign) => (
                     <Col sm={24} md={8} lg={6}>
