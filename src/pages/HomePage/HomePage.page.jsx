@@ -1,5 +1,5 @@
 import {Carousel, Col, Row, Skeleton} from 'antd';
-
+import CaroselBanner from "../../components/HomePage/CaroselBanner.component";
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import CardComponent from "../../components/HomePage/card.component";
@@ -14,7 +14,6 @@ const contentStyle = {
 
 
 const HomePage = () => {
-
     useEffect(() => {
         getCampaigns();
     }, []);
@@ -56,6 +55,7 @@ const HomePage = () => {
                     <h3 style={contentStyle}>4</h3>
                 </div>
             </Carousel>
+           <CaroselBanner/>
     <br/>    <br/>
 
             {loading ? (
@@ -68,12 +68,8 @@ const HomePage = () => {
                                        total_amount={campaign.total_amount} target_amount={campaign.target_amount} end_date={campaign.end_date}/>
                     </Col>
                     ))}
-
-
                 </Row>
             )}
-
-
         </div>
     )
 }
