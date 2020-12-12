@@ -38,7 +38,7 @@ function App() {
           footerRender={() => defaultFooterDom}
 
       >
-       <HomePage className='App'/>
+          <HomePage className='App'/>
       </ProLayout>
   );
 }
