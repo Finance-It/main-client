@@ -45,6 +45,8 @@ function App() {
           <Switch>
               <Route exact path="/" component={HomePage}/>
               <Route exact path="/login" component={Login}/>
+              <Route  path="/campaign/:id" component={CampaignPage}/>
+
           </Switch>
       </ProLayout>
   );

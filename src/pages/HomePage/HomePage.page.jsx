@@ -14,7 +14,7 @@ const contentStyle = {
 };
 
 
-const HomePage = () => {
+const HomePage = (props) => {
     useEffect(() => {
         getCampaigns();
     }, []);
@@ -39,6 +39,7 @@ const HomePage = () => {
             });
     }
 
+
     return (
         <div className='App'>
 
@@ -56,18 +57,20 @@ const HomePage = () => {
                     <h3 style={contentStyle}>4</h3>
                 </div>
             </Carousel>
-           <CaroselBanner/>
-    <br/>    <br/>
+            <CaroselBanner/>
+            <br/> <br/>
 
             {loading ? (
                 <ProSkeleton/>) : (
                 <Row gutter={[0, 32]} justify="center" style={{justifyContent: "center", marginLeft: "8%"}}>
                     {campaigns.map((campaign) => (
-                    <Col  key={campaign.id} sm={24} md={8} lg={6}>
-                        <CardComponent id={campaign.id} name={campaign.name} type={campaign.type}
-                                       description={'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a'}
-                                       total_amount={campaign.total_amount} target_amount={campaign.target_amount} end_date={campaign.end_date}/>
-                    </Col>
+                        <Col key={campaign.id} sm={24} md={8} lg={6}>
+                            <CardComponent id={campaign.id} name={campaign.name} type={campaign.type}
+                                           description={'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a'}
+                                           total_amount={campaign.total_amount} target_amount={campaign.target_amount}
+                                           end_date={campaign.end_date}
+                            />
+                        </Col>
                     ))}
                 </Row>
             )}
