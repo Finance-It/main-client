@@ -13,10 +13,10 @@ const Login = (props) => {
         setStatus('validating')
         setErrors('')
         try {
-            const res = await axios.post('/login', values)
+            const res = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/auth/jwt/create/`, values)
             setStatus('success')
             setErrors('')
-            const token = res.data.token
+            const token = res.data.access
             sessionStorage.setItem('token', token)
             props.history.replace('/')
         } catch (e) {
@@ -39,7 +39,7 @@ const Login = (props) => {
                 <Typography.Title align={'center'}>Login</Typography.Title>
                 <br/><br/>
                 <Form.Item
-                    name="email"
+                    name="username"
                     rules={[
                         {
                             required: true,
@@ -76,7 +76,6 @@ const Login = (props) => {
                         Log in
                     </Button>
                     <br/><br/>
-                    {/*Or <a href="/register">register now!</a>*/}
                 </Form.Item>
             </Form>
         </div>
