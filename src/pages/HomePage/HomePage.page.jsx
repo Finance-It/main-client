@@ -1,8 +1,9 @@
-import {Card, Carousel, Col, Row} from 'antd';
+import {Carousel, Col, Row, Skeleton} from 'antd';
 
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from "axios";
+import CardComponent from "../../components/HomePage/card.component";
 
-const {Meta} = Card;
 const contentStyle = {
     height: '400px',
     color: '#fff',
@@ -14,8 +15,29 @@ const contentStyle = {
 
 const HomePage = () => {
 
+    useEffect(() => {
+        getCampaigns();
+    }, []);
+
+    const [campaigns, setCampaign] = useState([])
+    const [loading, setLoading] = useState(true)
 
 
+    const getCampaigns = () => {
+        axios
+            .get(process.env.REACT_APP_MAIN_SERVER + "/campaigns/")
+            .then((res) => {
+                if (res.status === 200) {
+                    console.log(res.data)
+                    setCampaign(res.data);
+                    setLoading(true)
+                }
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
 
     return (
         <div>
@@ -34,42 +56,23 @@ const HomePage = () => {
                     <h3 style={contentStyle}>4</h3>
                 </div>
             </Carousel>
+    <br/>    <br/>
+
+            {loading ? (
+                <Skeleton active/>) : (
+                <Row gutter={[0, 32]} justify="center" style={{justifyContent: "center", marginLeft: "8%"}}>
+                    {campaigns.map((campaign) => (
+                    <Col sm={24} md={8} lg={6}>
+                        <CardComponent key={campaign.id} id={campaign.id} name={campaign.name} type={campaign.type}
+                                       description={'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a'}
+                                       total_amount={campaign.total_amount} target_amount={campaign.target_amount} end_date={campaign.end_date}/>
+                    </Col>
+                    ))}
 
 
+                </Row>
+            )}
 
-            <Row gutter={[8, 32]} justify="center" style={{ justifyContent:"center", marginLeft:"10%" }}>
-                <Col sm={24} md={8} lg={6}>
-                    <Card
-                        hoverable
-                        style={{width: 240}}
-                        cover={<img alt="example"
-                                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"/>}
-                    >
-                        <Meta title="Europe Street beat" description="www.instagram.com"/>
-                    </Card>
-                </Col>
-                <Col sm={24} md={8} lg={6}>
-                    <Card
-                        hoverable
-                        style={{width: 240}}
-                        cover={<img alt="example"
-                                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"/>}
-                    >
-                        <Meta title="Europe Street beat" description="www.instagram.com"/>
-                    </Card>
-                </Col>
-                <Col sm={12} md={8} lg={6}>
-                    <Card
-                        hoverable
-                        style={{width: 240}}
-                        cover={<img alt="example"
-                                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"/>}
-                    >
-                        <Meta title="Europe Street beat" description="www.instagram.com"/>
-                    </Card>
-                </Col>
-
-            </Row>
 
         </div>
     )
