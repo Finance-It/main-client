@@ -38,7 +38,8 @@ export default function FundComponent(props){
 
     return <div style={{width: '100%', maxWidth: '15rem', marginTop: '1.5rem'}}>
         {view === 0 && <div>
-            <Button block type={'primary'} onClick={_=>setView(1)}>Fund</Button>
+            {sessionStorage.getItem('token') && <Button block type={'primary'} onClick={_ => setView(1)}>Fund</Button>}
+            {!sessionStorage.getItem('token') && <Button block type={'primary'} href={'/login'}>Login to Fund this campaign</Button>}
         </div>}
         {view === 1 && <div>
             <Form>
