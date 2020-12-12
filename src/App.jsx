@@ -1,24 +1,46 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.less';
+import ProLayout, {DefaultFooter} from '@ant-design/pro-layout';
+import {GithubOutlined} from '@ant-design/icons';
+
+const defaultFooterDom = (
+    <DefaultFooter
+        copyright={`${new Date().getFullYear()} PICT ACM Student Chapter`}
+        links={[
+          {
+            key: 'Website',
+            title: 'Website',
+            href: 'https://pict.acm.org',
+            blankTarget: true,
+          },
+          {
+            key: 'github',
+            title: <GithubOutlined/>,
+            href: 'https://github.com/PICT-ACM-Student-Chapter',
+            blankTarget: true,
+          },
+          {
+            key: 'LinkedIn',
+            title: 'LinkedIn',
+            href: 'https://ant.design',
+            blankTarget: true,
+          },
+        ]}
+    />
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React , testing Finance-IT, ci/cd testing
-        </a>
-      </header>
-    </div>
+      <ProLayout
+          title="PASC OJ"
+          logo="https://pict.acm.org/radiance/img/PASC-W2.png"
+          layout="top"
+          fixedHeader="true"
+          footerRender={() => defaultFooterDom}
+
+      >
+          <h1>sflsdkfldj</h1>
+      </ProLayout>
   );
 }
 
