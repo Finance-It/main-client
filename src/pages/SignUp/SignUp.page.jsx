@@ -25,10 +25,9 @@ const SignUp = (props) => {
         try {
             console.log(values)
             values.email = values.username
-            const res = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/auth/users/`, values)
+            await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/auth/users/`, values)
             setStatus('success')
             setErrors('')
-            const token = res.data.access
             props.history.replace('/login')
             notification['success']({
                 message: 'User Registered',
