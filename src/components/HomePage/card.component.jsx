@@ -1,19 +1,13 @@
 import React from 'react'
 import {Card, Progress, Tag, Typography} from "antd";
 import {FieldTimeOutlined} from "@ant-design/icons";
-import {days_difference} from "../../utils/utils";
+import {days_difference, typeTagColor} from "../../utils/utils";
 
 //TODO: Add image link
 function CardComponent(props) {
     const percent = Math.round((props.total_amount / props.target_amount) * 100)
     const campaignLink = `/campaign/${props.id}`
     const days_remaining = days_difference(new Date(props.end_date), new Date())
-
-    const typeTagColor = {
-        Reward: 'success',
-        Debt: 'warning',
-        Donation: 'blue'
-    }
 
     return <a href={campaignLink}><Card
         style={{width: 300}}
