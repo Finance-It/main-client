@@ -51,7 +51,7 @@ const HomePage = () => {
     }
 
     return (
-        <div>
+        <div className='App'>
 
             <Carousel autoplay>
                 <div>
