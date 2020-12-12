@@ -3,6 +3,7 @@ import {Card, Progress, Tag, Typography} from "antd";
 import {FieldTimeOutlined} from "@ant-design/icons";
 import {days_difference} from "../../utils/utils";
 
+//TODO: Add image link
 function CardComponent(props) {
     const percent = Math.round((props.total_amount / props.target_amount) * 100)
     const campaignLink = `/campaign/${props.id}`
