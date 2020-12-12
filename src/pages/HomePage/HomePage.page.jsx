@@ -60,11 +60,11 @@ const HomePage = () => {
     <br/>    <br/>
 
             {loading ? (
-                <ProSkeleton />) : (
+                <ProSkeleton/>) : (
                 <Row gutter={[0, 32]} justify="center" style={{justifyContent: "center", marginLeft: "8%"}}>
                     {campaigns.map((campaign) => (
-                    <Col sm={24} md={8} lg={6}>
-                        <CardComponent key={campaign.id} id={campaign.id} name={campaign.name} type={campaign.type}
+                    <Col  key={campaign.id} sm={24} md={8} lg={6}>
+                        <CardComponent id={campaign.id} name={campaign.name} type={campaign.type}
                                        description={'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a'}
                                        total_amount={campaign.total_amount} target_amount={campaign.target_amount} end_date={campaign.end_date}/>
                     </Col>
