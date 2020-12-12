@@ -11,6 +11,7 @@ import axios from "axios";
 import CampaignPage from "./pages/CampaignPage/campaign.page";
 import MyInvestmentsPage from "./pages/InvestmentsPage/myInvestments.page";
 import PaymentSuccessPage from "./pages/paymentSuccess.page";
+import NewCampaign from "./pages/NewCampaignPage/newCampaign.page";
 const defaultFooterDom = (
     <DefaultFooter
         copyright={`${new Date().getFullYear()} Finance It`}
@@ -60,6 +61,7 @@ function App() {
                 <Route path="/campaign/:id" component={CampaignPage}/>
                 <Route exact path="/investments" component={MyInvestmentsPage}/>
                 <Route exact path="/payment_success" component={PaymentSuccessPage}/>
+                <Route exact path="/campaigns/new" component={NewCampaign}/>
             </Switch>
         </ProLayout>
     );

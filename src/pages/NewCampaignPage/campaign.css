@@ -1,0 +1,19 @@
+.campaign-form {
+    position: relative;
+    max-width: 400px;
+    padding: 20px;
+    left: 50%;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+}
+
+.campaign-form-button {
+    width: 100%;
+}
+
+.campaign-container{
+    background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
+    background-repeat: no-repeat;
+    background-position: center 110px;
+    background-size: 100%;
+}
