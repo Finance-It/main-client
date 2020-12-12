@@ -1,14 +1,24 @@
 import React from 'react'
-import {Col, Grid, Row} from "antd";
+import {Col, Row} from "antd";
+import TabComponent from "../../components/CampaignPage/tab.component";
 
-export default function CampaignPage(props){
-    return <Row>
-        <Col span={12}>
+export default function CampaignPage(props) {
+    return (
+        <div>
+            <Row>
+                <Col span={24}>
 
-        </Col>
+                </Col>
+            </Row>
+            <br/>
+            <br/>
+            <br/>
+            <Row>
 
-        <Col span={12}>
-
-        </Col>
-    </Row>
+                <Col span={12} offset={6}>
+                    <TabComponent/>
+                </Col>
+            </Row>
+        </div>
+    )
 }

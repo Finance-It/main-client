@@ -2,6 +2,7 @@ import './App.less';
 import ProLayout, {DefaultFooter} from '@ant-design/pro-layout';
 import {GithubOutlined} from '@ant-design/icons';
 import HomePage from "./pages/HomePage/HomePage.page";
+import CampaignPage from "./pages/CampaignPage/campaign.page";
 const defaultFooterDom = (
     <DefaultFooter
         copyright={`${new Date().getFullYear()} Finance It`}
@@ -39,6 +40,7 @@ function App() {
 
       >
           <HomePage className='App'/>
+          <CampaignPage/>
       </ProLayout>
   );
 }
