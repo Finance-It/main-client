@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.less';
 import ProLayout, {DefaultFooter} from '@ant-design/pro-layout';
 import {GithubOutlined} from '@ant-design/icons';
-
+import HomePage from "./pages/HomePage/HomePage.page";
 const defaultFooterDom = (
     <DefaultFooter
-        copyright={`${new Date().getFullYear()} PICT ACM Student Chapter`}
+        copyright={`${new Date().getFullYear()} Finance It`}
         links={[
           {
             key: 'Website',
@@ -32,14 +31,14 @@ const defaultFooterDom = (
 function App() {
   return (
       <ProLayout
-          title="PASC OJ"
+          title="Finance It"
           logo="https://pict.acm.org/radiance/img/PASC-W2.png"
           layout="top"
           fixedHeader="true"
           footerRender={() => defaultFooterDom}
 
       >
-          <h1>sflsdkfldj</h1>
+       <HomePage/>
       </ProLayout>
   );
 }
