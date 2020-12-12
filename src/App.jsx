@@ -31,7 +31,7 @@ const defaultFooterDom = (
 function App() {
   return (
       <ProLayout
-          title="PASC OJ"
+          title="Finance It"
           logo="https://pict.acm.org/radiance/img/PASC-W2.png"
           layout="top"
           fixedHeader="true"
