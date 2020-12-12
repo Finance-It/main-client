@@ -12,6 +12,7 @@ import CampaignPage from "./pages/CampaignPage/campaign.page";
 import MyInvestmentsPage from "./pages/InvestmentsPage/myInvestments.page";
 import PaymentSuccessPage from "./pages/paymentSuccess.page";
 import NewCampaign from "./pages/NewCampaignPage/newCampaign.page";
+import CampaignAdminPage from "./pages/CampaignAdminPage/campaign.page";
 const defaultFooterDom = (
     <DefaultFooter
         copyright={`${new Date().getFullYear()} Finance It`}
@@ -58,6 +59,7 @@ function App() {
                 <Route exact path="/" component={HomePage}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/signup" component={SignUp}/>
+                <Route path="/campaign/:id/admin" component={CampaignAdminPage}/>
                 <Route path="/campaign/:id" component={CampaignPage}/>
                 <Route exact path="/investments" component={MyInvestmentsPage}/>
                 <Route exact path="/payment_success" component={PaymentSuccessPage}/>

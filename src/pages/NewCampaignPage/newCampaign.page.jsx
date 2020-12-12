@@ -191,13 +191,13 @@ const NewCampaign = (props) => {
                     hasFeedback={true}
                 >
                     <Select onChange={val=>setType(val)} size='large' prefix={<DotChartOutlined className="site-form-item-icon" />} placeholder="Campaign Type">
-                        <Select.Option value={'reward'} >Reward Based</Select.Option>
-                        <Select.Option value={'donation'} >Donation Based</Select.Option>
-                        <Select.Option value={'debt'} >Debt Based</Select.Option>
-                        <Select.Option value={'equity'} >Equity Based</Select.Option>
+                        <Select.Option value={'Reward'} >Reward Based</Select.Option>
+                        <Select.Option value={'Donation'} >Donation Based</Select.Option>
+                        <Select.Option value={'Debt'} >Debt Based</Select.Option>
+                        <Select.Option value={'Equity'} >Equity Based</Select.Option>
                     </Select>
                 </Form.Item>
-                {type === 'reward' && <Form.Item
+                {type === 'Reward' && <Form.Item
                     name="reward"
                     rules={[
                         {
@@ -211,7 +211,7 @@ const NewCampaign = (props) => {
                     <Input size='large' prefix={<DollarOutlined className="site-form-item-icon"/>}
                            placeholder="Reward"/>
                 </Form.Item>}
-                {type === 'debt' && <Form.Item
+                {type === 'Debt' && <Form.Item
                     name="debt_interest"
                     rules={[
                         {
@@ -225,7 +225,7 @@ const NewCampaign = (props) => {
                     <Input size='large' prefix={<DollarOutlined className="site-form-item-icon"/>}
                            placeholder="Debt Interest"/>
                 </Form.Item>}
-                {type === 'debt' && <Form.Item
+                {type === 'Debt' && <Form.Item
                     name="debt_period"
                     rules={[
                         {
