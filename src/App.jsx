@@ -1,7 +1,10 @@
 import './App.less';
 import ProLayout, {DefaultFooter} from '@ant-design/pro-layout';
+import {Route, Switch} from 'react-router-dom';
 import {GithubOutlined} from '@ant-design/icons';
 import HomePage from "./pages/HomePage/HomePage.page";
+import Login from "./pages/Login/Login.page"
+
 import CampaignPage from "./pages/CampaignPage/campaign.page";
 const defaultFooterDom = (
     <DefaultFooter
@@ -39,8 +42,10 @@ function App() {
           footerRender={() => defaultFooterDom}
 
       >
-          <HomePage className='App'/>
-          <CampaignPage/>
+          <Switch>
+              <Route exact path="/" component={HomePage}/>
+              <Route exact path="/login" component={Login}/>
+          </Switch>
       </ProLayout>
   );
 }
