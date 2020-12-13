@@ -22,4 +22,4 @@ You will also see any lint errors in the console.
 Main branch is configured to automatically deploy on netlify.
 You can visit the domain below to access deployed website. 
 
-### [https://festive-johnson-9bf4e0.netlify.app/](https://festive-johnson-9bf4e0.netlify.app/)
+### [https://financeit.cf](https://financeit.cf)
