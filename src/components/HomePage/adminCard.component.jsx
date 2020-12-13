@@ -24,7 +24,7 @@ function AdminCardComponent(props) {
                 style={{width: 300}}
                 cover={
                     <img
-                        src={props.image_url}
+                       alt={props.name} src={props.image_url}
                     />
                 }
                 hoverable

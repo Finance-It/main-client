@@ -1,23 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import {Col, Row} from "antd";
-import TabComponent from "../../components/CampaignPage/tab.component";
+// import TabComponent from "../../components/CampaignPage/tab.component";
 import axios from "axios";
 import ProSkeleton from '@ant-design/pro-skeleton';
-import TopComponent from "../../components/CampaignPage/top.component";
+// import TopComponent from "../../components/CampaignPage/top.component";
 import TopAdminComponent from "../../components/CampaignAdminPage/top.component";
 import TabAdminComponent from "../../components/CampaignAdminPage/tab.component";
 
 function CampaignAdminPage(props) {
-
-    useEffect(() => {
-        if (sessionStorage.getItem('token'))
-            axios.defaults.headers.common['Authorization'] = `Bearer ${sessionStorage.getItem('token')}`;
-        getCampaign();
-    }, []);
-
-    const [campaign, setCampaign] = useState()
-    const [loading, setLoading] = useState(true)
-
     const getCampaign = () => {
         axios
             .get(process.env.REACT_APP_MAIN_SERVER + `/campaigns/${props.match.params.id}/admin`)
@@ -33,6 +23,16 @@ function CampaignAdminPage(props) {
                 console.log(err);
             });
     }
+
+    useEffect(() => {
+        if (sessionStorage.getItem('token'))
+            axios.defaults.headers.common['Authorization'] = `Bearer ${sessionStorage.getItem('token')}`;
+        getCampaign();
+    }, []);
+
+    const [campaign, setCampaign] = useState()
+    const [loading, setLoading] = useState(true)
+
 
     return (
         <div>

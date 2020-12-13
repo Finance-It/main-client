@@ -4,9 +4,9 @@ import {days_difference} from "../../utils/utils";
 
 function MyInvestmentCard(props) {
 
-    const investmentLink = `/investments/${props.id}`
-    const campaignLink = `/campaign/`
-    const days_remaining = days_difference(new Date(props.end_date), new Date())
+    // const investmentLink = `/investments/${props.id}`
+    // const campaignLink = `/campaign/`
+    // const days_remaining = days_difference(new Date(props.end_date), new Date())
 
     const typeTagColor = {
         PAID: 'success',
