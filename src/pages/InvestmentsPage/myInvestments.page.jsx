@@ -16,7 +16,6 @@ function MyInvestmentsPage(props) {
 
     const getInvestments = () => {
         const AuthStr = 'Bearer '.concat(sessionStorage.getItem('token'));
-
         axios
             .get(process.env.REACT_APP_MAIN_SERVER + "/investments/",
                 {headers: {Authorization: AuthStr}}

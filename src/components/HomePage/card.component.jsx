@@ -24,7 +24,6 @@ function CardComponent(props) {
                 style={{width: 300}}
                 cover={
                     <img
-                        alt="example"
                         src={props.image_url}
                     />
                 }

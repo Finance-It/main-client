@@ -1,8 +1,6 @@
 import React from 'react'
 import {Button, Tabs, Typography} from 'antd';
 import PitchComponent from "./pitch.component";
-import ReactMarkdown from 'react-markdown'
-import gfm from 'remark-gfm'
 import DebtRepaymentComponent from "./debtRepayment.component";
 import axios from "axios";
 import PayoutAccComponent from "./payoutAcc.component";
@@ -23,28 +21,28 @@ function TabAdminComponent(props) {
     //
     // }
 
-    const children = {
-        guide: 'Frequently Asked Questions\n\n' +
-            '1.What\'s the warranty policy?\n\n' +
-            'We have a 2-years warranty period. If there any issues with the product, you can send a service request to usa@ciga-design.com with the receipt, serial number, detailed description of the problem, and a photo or video attached. We will repair or replace the unit if the mechanism or workmanship is found to be defective or malfunction. This limited warranty does not cover damage resulting from abuse, accident, misuse, and improper storage.\n' +
-            '2.When will the watch begin to ship?\n\n' +
-            'Feb 2021, but we are working with the factory and planning to ship 1st small batch when the campaign ends, let you guys receive the watch ASAP. And the massive production will be after.\n' +
-            '3.Does this watch needs a battery?\n\n' +
-            'No, CIGA Design X Series has an automatic mechanical movement, which means you have 2 ways to provide energy to the watch. 1. Screw the crown 2. Casually swing your arm while walking.\n' +
-            '4.What\'s the difference between Titanium Edition and Stainless Steel Edition?\n\n' +
-            'The titanium version is lighter, slimmer, and more comfortable to wear. Highly recommended.\n\n' +
-            '5.How many straps does these perks contain?\n\n' +
-            'There will be one silicone and one nylon straps, a total of two straps.\n\n' +
-            '6.Can my wrist fit the watch?\n\n' +
-            'CIGA Design X Series straps have a total length of 258mm(with Nylon Strap)/ 259mm(with Silicone Strap), fitting most of the human wrists.\n' +
-            '7.Do I need any tools for switching the straps?\n\n' +
-            'CIGA Design X Series have the quick-switch function: you can totally switch them by hands, no tools needed. Just push the bar on the strap with your finger to release the strap. Any straps with a width of 22mm will fit this watch.\n' +
-            '8.Can I keep wearing it in a hot bath?\n\n' +
-            'Although CIGA Design x Series reaches 3ATM waterproof grade, do not keep the watch in the environment of steam and relatively high temperature.'
-    }
+    // const children = {
+    //     guide: 'Frequently Asked Questions\n\n' +
+    //         '1.What\'s the warranty policy?\n\n' +
+    //         'We have a 2-years warranty period. If there any issues with the product, you can send a service request to usa@ciga-design.com with the receipt, serial number, detailed description of the problem, and a photo or video attached. We will repair or replace the unit if the mechanism or workmanship is found to be defective or malfunction. This limited warranty does not cover damage resulting from abuse, accident, misuse, and improper storage.\n' +
+    //         '2.When will the watch begin to ship?\n\n' +
+    //         'Feb 2021, but we are working with the factory and planning to ship 1st small batch when the campaign ends, let you guys receive the watch ASAP. And the massive production will be after.\n' +
+    //         '3.Does this watch needs a battery?\n\n' +
+    //         'No, CIGA Design X Series has an automatic mechanical movement, which means you have 2 ways to provide energy to the watch. 1. Screw the crown 2. Casually swing your arm while walking.\n' +
+    //         '4.What\'s the difference between Titanium Edition and Stainless Steel Edition?\n\n' +
+    //         'The titanium version is lighter, slimmer, and more comfortable to wear. Highly recommended.\n\n' +
+    //         '5.How many straps does these perks contain?\n\n' +
+    //         'There will be one silicone and one nylon straps, a total of two straps.\n\n' +
+    //         '6.Can my wrist fit the watch?\n\n' +
+    //         'CIGA Design X Series straps have a total length of 258mm(with Nylon Strap)/ 259mm(with Silicone Strap), fitting most of the human wrists.\n' +
+    //         '7.Do I need any tools for switching the straps?\n\n' +
+    //         'CIGA Design X Series have the quick-switch function: you can totally switch them by hands, no tools needed. Just push the bar on the strap with your finger to release the strap. Any straps with a width of 22mm will fit this watch.\n' +
+    //         '8.Can I keep wearing it in a hot bath?\n\n' +
+    //         'Although CIGA Design x Series reaches 3ATM waterproof grade, do not keep the watch in the environment of steam and relatively high temperature.'
+    // }
 
-    async function handleNewVirtualAcc(){
-        const res = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/payments/campaign/${props.campaign.id}/repay`, {})
+    async function handleNewVirtualAcc() {
+        await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/payments/campaign/${props.campaign.id}/repay`, {})
         window.location.reload();
     }
 

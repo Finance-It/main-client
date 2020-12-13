@@ -8,6 +8,7 @@ import TopComponent from "../../components/CampaignPage/top.component";
 function CampaignPage(props) {
 
     useEffect(() => {
+
         getCampaign();
     }, []);
 
@@ -15,6 +16,8 @@ function CampaignPage(props) {
     const [loading, setLoading] = useState(true)
 
     const getCampaign = () => {
+        if (sessionStorage.getItem('token'))
+            axios.defaults.headers.common['Authorization'] = `Bearer ${sessionStorage.getItem('token')}`;
         axios
             .get(process.env.REACT_APP_MAIN_SERVER + `/campaigns/${props.match.params.id}`)
             .then((res) => {

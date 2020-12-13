@@ -11,6 +11,8 @@ const NewCampaign = (props) => {
     const [type, setType] = React.useState(null)
 
     const onFinish = async values => {
+        if (sessionStorage.getItem('token'))
+            axios.defaults.headers.common['Authorization'] = `Bearer ${sessionStorage.getItem('token')}`;
         console.log('oni')
         setStatus('validating')
         values.end_date = new Date(values.end_date)

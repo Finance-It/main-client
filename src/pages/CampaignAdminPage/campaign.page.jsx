@@ -10,6 +10,8 @@ import TabAdminComponent from "../../components/CampaignAdminPage/tab.component"
 function CampaignAdminPage(props) {
 
     useEffect(() => {
+        if (sessionStorage.getItem('token'))
+            axios.defaults.headers.common['Authorization'] = `Bearer ${sessionStorage.getItem('token')}`;
         getCampaign();
     }, []);
 

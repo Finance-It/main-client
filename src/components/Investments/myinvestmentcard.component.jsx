@@ -19,7 +19,7 @@ function MyInvestmentCard(props) {
 
     const typeTagColorCampaign = {
         Reward: 'success',
-        debt: 'warning',
+        Debt: 'warning',
         Donation: 'blue'
     }
 
