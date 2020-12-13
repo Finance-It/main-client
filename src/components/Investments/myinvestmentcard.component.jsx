@@ -9,17 +9,17 @@ function MyInvestmentCard(props) {
     const days_remaining = days_difference(new Date(props.end_date), new Date())
 
     const typeTagColor = {
-        Paid: 'success',
-        Pending: 'warning',
-        Initiateed: 'blue',
-        NotPaid: 'danger',
-        RefundInitiated: 'info',
-        RefundSuccess: 'success'
+        PAID: 'success',
+        PENDING: 'warning',
+        INITIATED: 'blue',
+        NOTPAID: 'danger',
+        REFUNDINITIATED: 'info',
+        REFUNDSUCCESS: 'success'
     }
 
     const typeTagColorCampaign = {
         Reward: 'success',
-        Debt: 'warning',
+        debt: 'warning',
         Donation: 'blue'
     }
 
@@ -34,7 +34,7 @@ function MyInvestmentCard(props) {
                     title={<Typography.Title
                         style={{marginRight: 'auto', fontWeight: '400'}}
                         level={4}>{props.campaign.name}<br/>
-                        <Tag color={typeTagColorCampaign[props.campaign.type]}>{props.type}</Tag>
+                        <Tag color={typeTagColorCampaign[props.type]}>{props.type}</Tag>
                     </Typography.Title>}
                 />
                 <br/><br/>

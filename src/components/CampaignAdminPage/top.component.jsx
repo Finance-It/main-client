@@ -1,14 +1,14 @@
 import React from 'react'
-import {Col, Image, Progress, Row, Tag, Typography} from "antd";
-import {days_difference, typeTagColor} from "../../utils/utils";
+import {Col, Image, Row, Tag, Typography} from "antd";
+import {typeTagColor} from "../../utils/utils";
 
 export default function TopAdminComponent(props) {
-    const percent = Math.round((props.total_amount / props.target_amount) * 100)
+    // const percent = Math.round((props.total_amount / props.target_amount) * 100)
 
     return <Row gutter={64} style={{padding: '2rem'}}>
         <Col span={12} style={{textAlign: 'center'}}>
             <Image caption={'Representation Image'}
-                   src={'https://c2.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,w_695,g_auto,q_auto,dpr_1.0,f_auto,h_460/squckgg3yuv7qlv26st2'}/>
+                   src={props.image_url}/>
         </Col>
         <Col span={12}>
             <div style={{position: 'relative', top: '50%', transform: "translateY(-50%)"}}>
@@ -23,27 +23,7 @@ export default function TopAdminComponent(props) {
                     Status: {props.status}
                 </Typography.Text>
                 <br/><br/>
-                <Row gutter={4}>
-                    <Col span={16}>
-                        <Typography.Text strong>
-                            &#8377; {props.total_amount} Raised of
-                        </Typography.Text>
-                        &nbsp;
-                        <Typography.Text>
-                            &#8377; {props.target_amount}
-                        </Typography.Text>
-                        <br/><br/>
-                        <Typography.Text strong style={{fontSize: '1.2rem'}}>
-                            Ends on: {new Date(props.end_date).toDateString()}
-                        </Typography.Text>
-                        <Typography.Text  style={{fontSize: '1.2rem'}}>
-                            &nbsp; ({days_difference(new Date(props.end_date), new Date())} days left)
-                        </Typography.Text>
-                    </Col>
-                    <Col span={8}>
-                        <Progress type={'circle'} percent={percent}/>
-                    </Col>
-                </Row>
+
 
             </div>
         </Col>

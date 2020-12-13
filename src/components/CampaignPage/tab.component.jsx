@@ -1,9 +1,10 @@
 import React from 'react'
 import {Tabs} from 'antd';
-import {AndroidOutlined, AppleOutlined} from '@ant-design/icons';
+import {BookOutlined, BulbOutlined} from '@ant-design/icons';
 import PitchComponent from "./pitch.component";
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
+
 const {TabPane} = Tabs;
 
 //TODO: Change tab icons
@@ -20,23 +21,20 @@ function TabComponent(props) {
     //
     // }
 
-    const children = {guide: 'Frequently Asked Questions\n\n' +
-        '1.What\'s the warranty policy?\n\n' +
-        'We have a 2-years warranty period. If there any issues with the product, you can send a service request to usa@ciga-design.com with the receipt, serial number, detailed description of the problem, and a photo or video attached. We will repair or replace the unit if the mechanism or workmanship is found to be defective or malfunction. This limited warranty does not cover damage resulting from abuse, accident, misuse, and improper storage.\n' +
-        '2.When will the watch begin to ship?\n\n' +
-        'Feb 2021, but we are working with the factory and planning to ship 1st small batch when the campaign ends, let you guys receive the watch ASAP. And the massive production will be after.\n' +
-        '3.Does this watch needs a battery?\n\n' +
-        'No, CIGA Design X Series has an automatic mechanical movement, which means you have 2 ways to provide energy to the watch. 1. Screw the crown 2. Casually swing your arm while walking.\n' +
-        '4.What\'s the difference between Titanium Edition and Stainless Steel Edition?\n\n' +
-        'The titanium version is lighter, slimmer, and more comfortable to wear. Highly recommended.\n\n' +
-        '5.How many straps does these perks contain?\n\n' +
-        'There will be one silicone and one nylon straps, a total of two straps.\n\n' +
-        '6.Can my wrist fit the watch?\n\n' +
-        'CIGA Design X Series straps have a total length of 258mm(with Nylon Strap)/ 259mm(with Silicone Strap), fitting most of the human wrists.\n' +
-        '7.Do I need any tools for switching the straps?\n\n' +
-        'CIGA Design X Series have the quick-switch function: you can totally switch them by hands, no tools needed. Just push the bar on the strap with your finger to release the strap. Any straps with a width of 22mm will fit this watch.\n' +
-        '8.Can I keep wearing it in a hot bath?\n\n' +
-        'Although CIGA Design x Series reaches 3ATM waterproof grade, do not keep the watch in the environment of steam and relatively high temperature.'}
+    const children = {
+        guide: `The proposed accredited investors who may be allowed to invest through crowdfunding platforms are as under: 
+-  Qualified Institutional Buyers (QIBs) as defined in SEBI (Issue of Capital and Disclosure Requirements) regulations, 2009 as amended from time to time, 
+-  Companies incorporated under the Companies Act of India, with a minimum net worth10
+-  High Net Worth Individuals (HNIs) with a minimum net worth Rs. 2 Crores or more (excluding the value of the primary residence or any loan secured on such property), and of Rs. 20 Crore, 
+-  Eligible Retail Investors (ERIs): 
+\t-  who receive investment advice from an Investment Adviser, or o who avail services of a Portfolio manager, or \t
+\t-  who have passed an Appropriateness Test (may be conducted by an institution accredited by NISM or the crowdfunding platforms), 
+\t**and**
+\t- who have a minimum annual gross income of Rs. 10 Lacs, 
+\t- who have filed Income Tax return for at least last 3 financial years, 
+\t- who certify that they will not invest more than Rs. 60,000 in an issue through crowdfunding platform, 
+\t- who certify that they will not invest more than 10% of their net worth through crowdfunding. (Net worth excludes the value of the primary residence or any loan secured on such property).`
+    }
 
 
     return <>
@@ -45,7 +43,7 @@ function TabComponent(props) {
                 tab={
                     <span>
 
-         <h2> <AppleOutlined/> Proposal</h2>
+         <h2> <BulbOutlined/> Proposal</h2>
         </span>
                 }
                 key="1"
@@ -55,12 +53,12 @@ function TabComponent(props) {
             <TabPane
                 tab={
                     <span>
-          <h2> <AndroidOutlined/>SEBI GUIDELINES</h2>
+          <h2> <BookOutlined/> SEBI GUIDELINES</h2>
         </span>
                 }
                 key="2"
             >
-                <ReactMarkdown plugins={[gfm]} children={children.guide} />
+               <h1> <ReactMarkdown plugins={[gfm]} children={children.guide}/></h1>
             </TabPane>
         </Tabs>
     </>

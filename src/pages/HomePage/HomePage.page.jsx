@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import CardComponent from "../../components/HomePage/card.component";
 import ProSkeleton from '@ant-design/pro-skeleton';
+// import c1 from "../../../public/assests/c1.jpeg"
 
 const contentStyle = {
     height: '400px',
@@ -44,16 +45,16 @@ const HomePage = (props) => {
 
             <Carousel autoplay>
                 <div>
-                    <h3 style={contentStyle}>1</h3>
+                    <img src="/assests/c1.jpeg" style={contentStyle} alt={'Alt'}/>
                 </div>
                 <div>
-                    <h3 style={contentStyle}>2</h3>
+                    <img src="/assests/c2.jpeg" style={contentStyle} alt={'Alt'}/>
                 </div>
                 <div>
-                    <h3 style={contentStyle}>3</h3>
+                    <img src="/assests/c1.jpeg" style={contentStyle} alt={'Alt'}/>
                 </div>
                 <div>
-                    <h3 style={contentStyle}>4</h3>
+                    <img src="/assests/c2.jpeg" style={contentStyle} alt={'Alt'}/>
                 </div>
             </Carousel>
             <CaroselBanner/>
@@ -65,9 +66,10 @@ const HomePage = (props) => {
                     {campaigns.map((campaign) => (
                         <Col key={campaign.id} sm={24} md={8} lg={6}>
                             <CardComponent id={campaign.id} name={campaign.name} type={campaign.type}
-                                           description={'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a'}
+                                            description={campaign.description}
                                            total_amount={campaign.total_amount} target_amount={campaign.target_amount}
                                            end_date={campaign.end_date}
+                                           image_url={campaign.image_url}
                             />
                         </Col>
                     ))}

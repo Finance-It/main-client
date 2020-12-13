@@ -38,8 +38,8 @@ export default function FundComponent(props){
 
     return <div style={{width: '100%', maxWidth: '15rem', marginTop: '1.5rem'}}>
         {view === 0 && <div>
-            {sessionStorage.getItem('token') && <Button block type={'primary'} onClick={_ => setView(1)}>Fund</Button>}
-            {!sessionStorage.getItem('token') && <Button block type={'primary'} href={'/login'}>Login to Fund this campaign</Button>}
+            {sessionStorage.getItem('token') && <Button block type={'primary'} size='large' onClick={_ => setView(1)}>Fund</Button>}
+            {!sessionStorage.getItem('token') && <Button block type={'primary'} href={'/login'} size='large'>Login to Fund this campaign</Button>}
         </div>}
         {view === 1 && <div>
             <Form>
@@ -51,7 +51,7 @@ export default function FundComponent(props){
                     </Col>
                     <Col span={2}>
                         <Form.Item>
-                            <Button type={'primary'} disabled={!isAmountValid} onClick={handleFund} >
+                            <Button type={'primary'} size='large' disabled={!isAmountValid} onClick={handleFund} >
                                 Fund
                             </Button>
                         </Form.Item>
@@ -66,7 +66,7 @@ export default function FundComponent(props){
             <Alert message={<><LoadingOutlined />&nbsp; Generating Payment Link</>} />
         </div>}
         {view === 4 && <div>
-            <Button href={paymentLink} type={'primary'} color={'success'}>Proceed to Pay</Button>
+            <Button href={paymentLink} size='large' type={'primary'} color={'success'}>Proceed to Pay</Button>
         </div>}
     </div>
 }
