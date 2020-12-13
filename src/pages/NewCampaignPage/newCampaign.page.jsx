@@ -1,7 +1,16 @@
 import React from 'react';
 import './campaign.css';
 import {Button, Form, Input, Select, Typography} from 'antd';
-import { UserOutlined, UsergroupAddOutlined, DotChartOutlined, CalendarOutlined, NumberOutlined, BankOutlined, DollarOutlined } from '@ant-design/icons';
+import {
+    UserOutlined,
+    UsergroupAddOutlined,
+    DotChartOutlined,
+    CalendarOutlined,
+    NumberOutlined,
+    BankOutlined,
+    DollarOutlined,
+    LinkOutlined
+} from '@ant-design/icons';
 import axios from 'axios'
 import TextArea from 'antd/lib/input/TextArea';
 
@@ -52,6 +61,32 @@ const NewCampaign = (props) => {
                     hasFeedback={true}
                 >
                     <Input size='large' prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Campaign Name" />
+                </Form.Item>
+                <Form.Item
+                    name="description"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input Description',
+                        },
+                    ]}
+                    validateStatus={status}
+                    hasFeedback={true}
+                >
+                    <TextArea size='large' type='text' placeholder="Short Description" />
+                </Form.Item>
+                <Form.Item
+                    name="image_url"
+                    rules={[
+                        {
+                            required: false,
+                            message: 'Please input Image URL!',
+                        },
+                    ]}
+                    validateStatus={status}
+                    hasFeedback={true}
+                >
+                    <Input size='large' prefix={<LinkOutlined className="site-form-item-icon" />} placeholder="Banner Image URL" />
                 </Form.Item>
                 <Form.Item
                     name="pitch"
