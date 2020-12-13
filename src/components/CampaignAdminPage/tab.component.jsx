@@ -4,6 +4,9 @@ import PitchComponent from "./pitch.component";
 import DebtRepaymentComponent from "./debtRepayment.component";
 import axios from "axios";
 import PayoutAccComponent from "./payoutAcc.component";
+import {SketchOutlined} from "@ant-design/icons";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 const {TabPane} = Tabs;
 
@@ -71,6 +74,16 @@ function TabAdminComponent(props) {
                 <Typography.Title level={4}>Funds raised will be transferred to this account:</Typography.Title>
                 <PayoutAccComponent {...props} />
             </TabPane>
+            {props.campaign.type === 'Reward' && <TabPane
+                tab={
+                    <span>
+          <h2> <SketchOutlined/> REWARDS</h2>
+        </span>
+                }
+                key="3"
+            >
+                <h1><ReactMarkdown plugins={[gfm]} children={props.campaign.reward}/></h1>
+            </TabPane>}
             {props.campaign.type === 'Debt' && <TabPane
                 tab={
                     <span>

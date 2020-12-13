@@ -34,7 +34,7 @@ const defaultFooterDom = (
             {
                 key: 'Hackathon',
                 title: 'FTX Hackathon',
-                href: 'ftx-hackathon.devfolio.co',
+                href: 'https://ftx-hackathon.devfolio.co',
                 blankTarget: true,
             },
         ]}

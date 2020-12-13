@@ -117,7 +117,7 @@ const SignUp = (props) => {
                 </Form.Item>
                 <Form.Item>
                     <Button size='large' type="primary" htmlType="submit" className="login-form-button">
-                        Log in
+                        Sign Up
                     </Button>
                     <br/><br/>
                 </Form.Item>

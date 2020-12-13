@@ -34,7 +34,7 @@ const GlobalHeaderRight = ()=>{
     return(
         <Space size="middle">
             <Link to='/investments' style={{color:"white", fontWeight:"bold"}}>My Investments</Link>
-            <Link to='/mycampaigns' style={{color:"white", fontWeight:"bold"}}>My Campaign</Link>
+            <Link to='/mycampaigns' style={{color:"white", fontWeight:"bold"}}>My Campaigns</Link>
             <Link to='/login' style={{color:"white", fontWeight:"bold"}}>Log Out</Link>
         </Space>
     )

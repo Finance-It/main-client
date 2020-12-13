@@ -1,6 +1,6 @@
 import React from 'react'
 import {Tabs} from 'antd';
-import {BookOutlined, BulbOutlined} from '@ant-design/icons';
+import {BookOutlined, BulbOutlined, SketchOutlined} from '@ant-design/icons';
 import PitchComponent from "./pitch.component";
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
@@ -60,6 +60,16 @@ function TabComponent(props) {
             >
                <h1> <ReactMarkdown plugins={[gfm]} children={children.guide}/></h1>
             </TabPane>
+            {props.campaign.type === 'Reward' && <TabPane
+                tab={
+                    <span>
+          <h2> <SketchOutlined/> REWARDS</h2>
+        </span>
+                }
+                key="3"
+            >
+                <h1><ReactMarkdown plugins={[gfm]} children={props.campaign.reward}/></h1>
+            </TabPane>}
         </Tabs>
     </>
 }
