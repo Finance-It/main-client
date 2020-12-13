@@ -19,6 +19,7 @@ const Login = (props) => {
             console.log(res.data.access)
             sessionStorage.setItem('token', res.data.access)
             props.history.push('/')
+            // window.location.replace('/')
         } catch (e) {
             setStatus('error')
             setErrors('\nInvalid Email or Password!')

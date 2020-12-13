@@ -18,7 +18,7 @@ const NewCampaign = (props) => {
             const res = await axios.post(`${process.env.REACT_APP_MAIN_SERVER}/campaigns/`, values)
             setStatus('success')
             console.log(res.data);
-            props.history.replace('/')
+            props.history.push('/mycampaigns')
         } catch (e) {
             setStatus('error')
         }

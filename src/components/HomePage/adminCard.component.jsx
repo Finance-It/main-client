@@ -5,9 +5,9 @@ import {days_difference, typeTagColor} from "../../utils/utils";
 import {useHistory} from "react-router";
 
 //TODO: Add image link
-function CardComponent(props) {
+function AdminCardComponent(props) {
     const percent = Math.round((props.total_amount / props.target_amount) * 100)
-    const campaignLink = `/campaign/${props.id}`
+    const campaignLink = `/campaign/${props.id}/admin`
     const days_remaining = days_difference(new Date(props.end_date), new Date())
 
 
@@ -47,7 +47,7 @@ function CardComponent(props) {
         </div>)
 }
 
-export default CardComponent
+export default AdminCardComponent
 
 // Usage
 // <CardComponent id={2} name={'Execute It Fundraiser'} type={'Donation'} description={'Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a design language for background applications, is refined by Ant UED Team. Ant Design, a'} total_amount={88} target_amount={123} end_date={'2020-12-17T19:55:30Z'} />
